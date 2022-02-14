@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{listings}
+
+\title{Code Style}
+\author{Kirill Lyashenko }
+\date{February 2022}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\textbf{Github}: NaNlaggergit
+\\\textbf{Mail}: hlo.lyashenko@yandex.ru
+\section{C++}
+\textbf{Header Files}
+\\
+\\У каждого .cpp файла должен быть .h, кроме файла с main
+\\
+\\\textbf{Classes}
+\\
+\\Названия классов начинаются с Заглавной буквы. Названия функции класса должны быть корректными(должны делать то чем называются) 
+\\Пример:
+\begin{lstlisting}
+class Students {
+public:
+    string name;
+    string last_name;
+    int scores[5]; 
+    float average_ball;
+void calculate_average_ball()
+        {
+            int sum = 0;
+            for (int i = 0; i < 5; ++i) {
+                sum += scores[i];
+            }
+            average_ball = sum / 5.0;
+        }
+};
+\end{lstlisting}
+\textbf{libraries}
+\\
+\\Библиотеки подключаются в начеле файла
+\\
+\\\textbf{Comments}
+\\
+\\Каждое неочевидное объявление класса или структуры или функции должно сопровождаться комментарием, описывающим, для чего оно предназначено и как его следует использовать.
+\\
+\\\textbf{TODO Comments}
+\\
+\\Используйте TODO комментарии для кода, который нужно доработать 
+\\
+\\\textbf{Loops and Conditionals}
+\\Циклы и условия всегда должны иметь{}.
+Пример ошибки:
+\begin{lstlisting}
+for (int i = 0; i < 5; ++i) 
+    if(i<5)
+        i++;
+\end{lstlisting}
+После написания цикла или условия ставим фигурные скобки без отступа(для экономии времени и места)
+\begin{lstlisting}
+for(int i; i<10; i++){
+}
+\end{lstlisting}
+\section{Список литературы}
+1. https://google.github.io/styleguide/cppguide.html
+
+
+
+\end{document}
